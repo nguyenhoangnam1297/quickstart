@@ -17,7 +17,7 @@ class Task_Controller extends Controller
       $tasks=Task::orderby('created_at','desc')->get();
       return view('task',compact('tasks','count'));
     }
-    public function postTask(Request $rq){
+    public function post_Task(Request $rq){
       $rule=[
         'name'=>'required|max:255'];
       $msg=['name.required'=>'Trường này không được bỏ trống'];
@@ -30,7 +30,7 @@ class Task_Controller extends Controller
       $task->save();
       return redirect()->route('task');
     }
-    public function deleteTask($id){
+    public function delete_Task($id){
       $task=Task::where('id',$id)->delete();
       return redirect()->route('task');
     }

@@ -16,5 +16,5 @@ Route::get('/', function () {
 
 
 Route::get('/','Task_Controller@task')->name('task');
-Route::post('/task','Task_Controller@postTask')->name('postTask');
-Route::get('/delete/{id}','Task_Controller@deleteTask');
+Route::post('/task','Task_Controller@post_Task')->name('postTask');
+Route::get('/delete/{id}','Task_Controller@delete_Task');
