@@ -20,8 +20,7 @@ class Task_Controller extends Controller
     public function post_Task(Request $rq){
       $rule=[
         'name'=>'required|max:255'];
-      $msg=['name.required'=>'Trường này không được bỏ trống'];
-      $val=Validator::make($rq->all(),$rule,$msg);
+      $val=Validator::make($rq->all(),$rule);
       if($val->fails()){
         return redirect()->back()->withErrors($val)->withInput();
       }
